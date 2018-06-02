@@ -1,0 +1,12 @@
+c:\users\usuario\documents\visual studio 2013\Projects\PFIII\PFIII\bin\Debug\PFIII.exe.config
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\bin\Debug\PFIII.exe.config
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\bin\Debug\PFIII.exe
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\bin\Debug\PFIII.pdb
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.Form1.resources
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.Properties.Resources.resources
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.csproj.GenerateResource.Cache
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.exe
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.pdb
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.PuntoVenta.resources
+C:\Users\Usuario\Documents\GitHub\ProgramacionIII\PFIII\PFIII\obj\Debug\PFIII.Trastienda.resources
