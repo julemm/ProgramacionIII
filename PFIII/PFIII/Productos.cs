@@ -14,23 +14,23 @@ namespace PFIII
         DateTime fecha;
         public String Producto
         {
-        get { return Producto; }
-        set { Producto = value; }
+        get { return producto; }
+        set { producto = value; }
         }
         public double Precio
         {
-        get { return Precio; }
-        set { Precio = value; }
+        get { return precio; }
+        set { precio = value; }
         }
         public int Unidades
         {
-        get { return Unidades; }
-        set { Unidades = value; }
+        get { return unidades; }
+        set { unidades = value; }
         }
         public DateTime Fecha
         {
-        get { return Fecha; }
-        set { Fecha = value; }
+        get { return fecha; }
+        set { fecha = value; }
         } 
     }
 }
