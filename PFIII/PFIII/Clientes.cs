@@ -10,10 +10,21 @@ namespace PFIII
     {
     String nit;
     String nombre;
-    public String Nit
+    String ciudad;
+    public string Nit
     {
-    get { return Nit; }
-    set { Nit = value; }
+    get { return nit; }
+    set { nit = value; }
+    }
+    public string Nombre
+    {
+    get { return nombre; }
+    set { nombre = value; }
+    }
+    public string Ciudad
+    {
+    get { return ciudad; }
+    set { ciudad = value; }
     }
     }
 }

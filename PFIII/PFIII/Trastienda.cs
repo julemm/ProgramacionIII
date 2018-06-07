@@ -81,7 +81,7 @@ namespace PFIII
 
         private void Trastienda_Load(object sender, EventArgs e)
         {
-      
+        pictureBox1.Image = Image.FromFile("Mario.jpg");
         }
 
         private void button5_Click(object sender, EventArgs e)

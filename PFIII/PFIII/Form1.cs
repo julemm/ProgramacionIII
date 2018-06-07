@@ -42,5 +42,9 @@ namespace PFIII
         textBoxContraseña.Clear();
         comboBox1.Text = "";
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
