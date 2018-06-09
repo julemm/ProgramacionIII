@@ -50,6 +50,7 @@ namespace PFIII
         string fileName = "Inventario.txt.";
         FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
         StreamReader reader = new StreamReader(stream);
+        int cont = 0;
         while (reader.Peek() > -1)
         {
         Productos protemp = new Productos();
@@ -69,13 +70,14 @@ namespace PFIII
         textBoxUnidades.Text = productos[i].Unidades.ToString();
         textBoxFecha.Text = productos[i].Fecha.ToString();
         posicionmodificar = i;
+        cont++;
         }
-        else
+        }
+        if(cont==0)
         {
         MessageBox.Show("Producto no encontrado.");
         textBoxProductos.Text = "";
         textBoxProductos.Focus();
-        }
         }
         }
 

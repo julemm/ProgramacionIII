@@ -37,7 +37,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.textBoxNit = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.comboBoxProductos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -155,13 +155,6 @@
             this.label6.Size = new System.Drawing.Size(74, 16);
             this.label6.TabIndex = 40;
             this.label6.Text = "Cantidad:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(380, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(86, 20);
-            this.textBox2.TabIndex = 39;
             // 
             // label5
             // 
@@ -375,6 +368,16 @@
             this.button7.TabIndex = 63;
             this.button7.Text = "Crear";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // comboBoxProductos
+            // 
+            this.comboBoxProductos.FormattingEnabled = true;
+            this.comboBoxProductos.Location = new System.Drawing.Point(380, 55);
+            this.comboBoxProductos.Name = "comboBoxProductos";
+            this.comboBoxProductos.Size = new System.Drawing.Size(86, 21);
+            this.comboBoxProductos.TabIndex = 64;
             // 
             // PuntoVenta
             // 
@@ -382,6 +385,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(557, 395);
+            this.Controls.Add(this.comboBoxProductos);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -405,7 +409,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBoxNit);
@@ -433,7 +436,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBoxNit;
@@ -454,5 +456,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ComboBox comboBoxProductos;
     }
 }
