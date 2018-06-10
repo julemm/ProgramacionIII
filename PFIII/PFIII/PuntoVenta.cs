@@ -183,5 +183,35 @@ namespace PFIII
         MessageBox.Show(total.ToString());
         reader.Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Venta.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        Productos pptemp = new Productos();
+        double total = 0;
+        while (reader.Peek() > -1)
+        {
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        productos.Add(pptemp);
+        double sub = pptemp.Unidades * pptemp.Precio;
+        total = sub + total;
+        }
+        double efectivo = Convert.ToDouble(textBoxEfectivo.Text);
+        if(efectivo>=total)
+        {
+        double vuelto = efectivo - total;
+        labelVuelto.Text = vuelto.ToString("0.00");
+        }
+        else if(efectivo<total)
+        {
+        MessageBox.Show("DINERO INSUFICIENTE.");
+        }
+        reader.Close();
+        }
     }
 }

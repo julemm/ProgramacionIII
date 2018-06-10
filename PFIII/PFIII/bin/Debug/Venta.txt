@@ -4,3 +4,6 @@ Wii
 Switch
 1
 2500
+Mario Bros 2
+2
+100

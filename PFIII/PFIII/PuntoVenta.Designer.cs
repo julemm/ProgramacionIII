@@ -30,7 +30,7 @@
         {
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxEfectivo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -84,12 +84,12 @@
             this.label8.TabIndex = 47;
             this.label8.Text = "Vuelto:";
             // 
-            // textBox4
+            // textBoxEfectivo
             // 
-            this.textBox4.Location = new System.Drawing.Point(416, 182);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(86, 20);
-            this.textBox4.TabIndex = 46;
+            this.textBoxEfectivo.Location = new System.Drawing.Point(416, 182);
+            this.textBoxEfectivo.Name = "textBoxEfectivo";
+            this.textBoxEfectivo.Size = new System.Drawing.Size(86, 20);
+            this.textBoxEfectivo.TabIndex = 46;
             // 
             // label7
             // 
@@ -320,6 +320,7 @@
             this.button5.TabIndex = 58;
             this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // labelVuelto
             // 
@@ -405,7 +406,7 @@
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxEfectivo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -432,7 +433,7 @@
 
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxEfectivo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
