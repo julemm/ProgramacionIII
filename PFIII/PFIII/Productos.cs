@@ -10,7 +10,7 @@ namespace PFIII
     {
         public String producto;
         public double precio;
-        public int unidades;
+        public double unidades;
         DateTime fecha;
         public String Producto
         {
@@ -22,7 +22,7 @@ namespace PFIII
         get { return precio; }
         set { precio = value; }
         }
-        public int Unidades
+        public double Unidades
         {
         get { return unidades; }
         set { unidades = value; }
@@ -31,6 +31,6 @@ namespace PFIII
         {
         get { return fecha; }
         set { fecha = value; }
-        } 
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace PFIII
     {
     List<Clientes> clientes = new List<Clientes>();
     List<Productos> productos = new List<Productos>();
+    List<Venta1> venta1 = new List<Venta1>();
         public PuntoVenta()
         {
             InitializeComponent();
@@ -81,7 +82,7 @@ namespace PFIII
         Productos ptemp = new Productos();
         ptemp.Producto = readers.ReadLine();
         ptemp.Precio = Convert.ToDouble(readers.ReadLine());
-        ptemp.Unidades = Convert.ToInt32(readers.ReadLine());
+        ptemp.Unidades = Convert.ToDouble(readers.ReadLine());
         ptemp.Fecha = Convert.ToDateTime(readers.ReadLine());
         productos.Add(ptemp);
         }
@@ -119,6 +120,68 @@ namespace PFIII
         labelCiudad.Text = clientes[i].Ciudad;
         }
         } 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        Productos vtemp = new Productos();
+        string fileName = "Venta.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Append, FileAccess.Write);
+        StreamWriter writer = new StreamWriter(stream);
+        for (int i = 0; i < productos.Count; i++)
+        {
+        if (comboBoxProductos.Text == (productos[i].Producto))
+        {
+        writer.WriteLine(productos[i].Producto);
+        writer.WriteLine(textBoxCantidad.Text);
+        writer.WriteLine(productos[i].Precio);
+        productos.Add(vtemp);
+        }
+        }
+        writer.Close();
+        MessageBox.Show("Venta Realizada.");
+        comboBoxProductos.Text = "";
+        textBoxCantidad.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Venta.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        Productos pptemp = new Productos();
+        while (reader.Peek() > -1)
+        {
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        double sub = pptemp.Unidades * pptemp.Precio;
+        MessageBox.Show(sub.ToString());
+        reader.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Venta.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        Productos pptemp = new Productos();
+        double total = 0;
+        while (reader.Peek() > -1)
+        {
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        productos.Add(pptemp);
+        double sub = pptemp.Unidades * pptemp.Precio;
+        total = sub+total;
+        }
+        MessageBox.Show(total.ToString());
+        reader.Close();
         }
     }
 }

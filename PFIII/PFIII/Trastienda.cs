@@ -26,7 +26,7 @@ namespace PFIII
         StreamWriter writer = new StreamWriter(stream);
         writer.WriteLine(textBoxProductos.Text);
         writer.WriteLine(Convert.ToDouble(textBoxPrecio.Text));
-        writer.WriteLine(Convert.ToInt32(textBoxUnidades.Text));
+        writer.WriteLine(Convert.ToDouble(textBoxUnidades.Text));
         try
         {
         writer.WriteLine(Convert.ToDateTime(textBoxFecha.Text));
@@ -56,7 +56,7 @@ namespace PFIII
         Productos protemp = new Productos();
         protemp.Producto = reader.ReadLine();
         protemp.Precio = Convert.ToDouble(reader.ReadLine());
-        protemp.Unidades = Convert.ToInt32(reader.ReadLine());
+        protemp.Unidades = Convert.ToDouble(reader.ReadLine());
         protemp.Fecha = Convert.ToDateTime(reader.ReadLine());
         productos.Add(protemp);
         }
@@ -90,7 +90,7 @@ namespace PFIII
         {
         productos[posicionmodificar].Producto = textBoxProductos.Text;
         productos[posicionmodificar].Precio = Convert.ToDouble(textBoxPrecio.Text);
-        productos[posicionmodificar].Unidades = Convert.ToInt32(textBoxUnidades.Text);
+        productos[posicionmodificar].Unidades = Convert.ToDouble(textBoxUnidades.Text);
         productos[posicionmodificar].Fecha = Convert.ToDateTime(textBoxFecha.Text);
         string fileNames = "Inventario.txt";
         FileStream streams = new FileStream(fileNames, FileMode.Create, FileAccess.Write);
