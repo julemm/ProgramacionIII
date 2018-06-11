@@ -16,6 +16,10 @@ namespace PFIII
     List<Clientes> clientes = new List<Clientes>();
     List<Productos> productos = new List<Productos>();
     List<Venta1> venta1 = new List<Venta1>();
+    int cont = 0;
+    int contclientes = 0;
+    string pro;
+    string cli;
         public PuntoVenta()
         {
             InitializeComponent();
@@ -35,11 +39,13 @@ namespace PFIII
         int cont=0;
         for (int i = 0; i < clientes.Count; i++)
         {
+        cli = textBoxNit.Text;
         if(textBoxNit.Text==(clientes[i].Nit))
         {
         labelNombre.Text = clientes[i].Nombre;
         labelCiudad.Text = clientes[i].Ciudad;
         cont++;
+        contclientes++;
         }
         }
         if(cont==0)
@@ -121,21 +127,22 @@ namespace PFIII
         }
         } 
         }
-
         private void button1_Click(object sender, EventArgs e)
-        {
+        { 
         Productos vtemp = new Productos();
         string fileName = "Venta.txt";
         FileStream stream = new FileStream(fileName, FileMode.Append, FileAccess.Write);
         StreamWriter writer = new StreamWriter(stream);
         for (int i = 0; i < productos.Count; i++)
         {
+        pro = comboBoxProductos.Text;
         if (comboBoxProductos.Text == (productos[i].Producto))
         {
         writer.WriteLine(productos[i].Producto);
         writer.WriteLine(textBoxCantidad.Text);
         writer.WriteLine(productos[i].Precio);
         productos.Add(vtemp);
+        cont++;
         }
         }
         writer.Close();
@@ -162,7 +169,7 @@ namespace PFIII
         MessageBox.Show(sub.ToString());
         reader.Close();
         }
-
+  
         private void button3_Click(object sender, EventArgs e)
         {
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -212,6 +219,37 @@ namespace PFIII
         MessageBox.Show("DINERO INSUFICIENTE.");
         }
         reader.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+        Venta1 vetemp = new Venta1();
+        Productos prtemp = new Productos();
+        string fileName = "Factura.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Append, FileAccess.Write);
+        StreamWriter writer = new StreamWriter(stream);
+        for (int i = 0; i < productos.Count; i++)
+        {
+        if ((cont >= 1) && (pro == productos[i].Producto))
+        {
+        writer.WriteLine("Producto: "+productos[i].Producto);
+        writer.WriteLine("Unidades: "+productos[i].Unidades);
+        writer.WriteLine("Fecha: " + productos[i].Fecha);
+        vetemp.Producto = productos[i].Producto;
+        vetemp.Unidades = productos[i].Unidades;
+        vetemp.Fh = productos[i].Fecha;
+        venta1.Add(vetemp);
+        }
+        }
+        for (int j = 0; j < clientes.Count;j++ )
+        {
+        if(cli==clientes[j].Nit&& contclientes==1)
+        {
+        writer.WriteLine("Cliente: "+clientes[j].Nombre);
+        }
+        }
+        writer.Close();
+        MessageBox.Show("Venta Realizada.");
         }
     }
 }

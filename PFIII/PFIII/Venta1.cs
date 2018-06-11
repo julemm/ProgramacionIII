@@ -10,6 +10,9 @@ namespace PFIII
     {
     String producto;
     double unidades;
+    String cliente;
+    String cajero;
+    DateTime fh;
     public String Producto
     {
     get { return producto; }
@@ -19,6 +22,21 @@ namespace PFIII
     {
     get { return unidades; }
     set { unidades = value; }
+    }
+    public String Cliente
+    {
+    get { return cliente; }
+    set { cliente = value; }
+    }
+    public String Cajero
+    {
+    get { return cajero; }
+    set { cajero = value; }
+    }
+    public DateTime Fh
+    {
+    get { return fh; }
+    set { fh = value; }
     }
     }
 }

@@ -338,12 +338,13 @@
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(247, 273);
+            this.button6.Location = new System.Drawing.Point(237, 272);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(82, 46);
             this.button6.TabIndex = 60;
             this.button6.Text = "Registrar Venta Total";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // pictureBox1
             // 
