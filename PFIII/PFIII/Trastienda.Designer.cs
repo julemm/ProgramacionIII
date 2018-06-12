@@ -76,6 +76,7 @@
             this.button3.TabIndex = 34;
             this.button3.Text = "OK";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label7
             // 
@@ -285,6 +286,7 @@
             this.button4.TabIndex = 41;
             this.button4.Text = "OK";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 

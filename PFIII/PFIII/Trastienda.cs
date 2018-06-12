@@ -13,6 +13,8 @@ namespace PFIII
     public partial class Trastienda : Form
     {
         static List<Productos> productos = new List<Productos>();
+        List<Venta1> venta1 = new List<Venta1>();
+        List<Usuarios> usuarios = new List<Usuarios>();
         static int posicionmodificar;
         string admin;
         public Trastienda()
@@ -112,6 +114,365 @@ namespace PFIII
         textBoxUnidades.Text = "";
         textBoxFecha.Text = "";
         textBoxProductos.Focus();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+        //Primera Opcion
+        if ((comboBoxListas.Text == "Productos más vendidos"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos ptemp = new Productos();
+        ptemp.Producto = reader.ReadLine();
+        ptemp.Precio =Convert.ToDouble(reader.ReadLine());
+        ptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        ptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(ptemp);
+        }
+        reader.Close();
+        dataGridView1.DataSource = null;
+        dataGridView1.Refresh();
+        dataGridView1.DataSource = productos;
+        dataGridView1.Refresh();
+        }
+        //Segunda Opcion
+        if (comboBoxListas.Text == "Productos con poca existencia")
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario1.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos ptemp = new Productos();
+        ptemp.Producto = reader.ReadLine();
+        ptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        ptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        ptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(ptemp);
+        }
+        reader.Close();
+        dataGridView1.DataSource = null;
+        dataGridView1.Refresh();
+        dataGridView1.DataSource = productos;
+        dataGridView1.Refresh();
+        }
+        //Tercera Opcion
+        if (comboBoxListas.Text == "Ventas cada vendedor")
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Factura.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Venta1 vtemp = new Venta1();
+        vtemp.Producto = reader.ReadLine();
+        vtemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        vtemp.Cliente = reader.ReadLine();
+        vtemp.Cajero= reader.ReadLine();
+        vtemp.Fh = Convert.ToDateTime(reader.ReadLine());
+        venta1.Add(vtemp);
+        }
+        reader.Close();
+        dataGridView1.DataSource = null;
+        dataGridView1.Refresh();
+        dataGridView1.DataSource = venta1;
+        dataGridView1.Refresh();
+        }
+        //Cuarta Opcion
+        if (comboBoxListas.Text == "Vendedor con más ventas")
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Usuarios1.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Usuarios utemp = new Usuarios();
+        utemp.Nombre = reader.ReadLine();
+        utemp.Departamento = reader.ReadLine();
+        usuarios.Add(utemp);
+        }
+        reader.Close();
+        dataGridView1.DataSource = null;
+        dataGridView1.Refresh();
+        dataGridView1.DataSource = usuarios;
+        dataGridView1.Refresh();
+        }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+        if((comboBoxMes.Text=="Enero"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018,6,1,10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio =Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades =Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Febrero"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Marzo"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Abril"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Mayo"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Junio"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Julio"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Agosto"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Septiembre"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Octubre"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Noviembre"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
+        if ((comboBoxMes.Text == "Diciembre"))
+        {
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        string fileName = "Inventario.txt";
+        FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+        StreamReader reader = new StreamReader(stream);
+        while (reader.Peek() > -1)
+        {
+        Productos pptemp = new Productos();
+        DateTime a = new DateTime(2018, 6, 1, 10, 01, 30);
+        pptemp.Producto = reader.ReadLine();
+        pptemp.Precio = Convert.ToDouble(reader.ReadLine());
+        pptemp.Unidades = Convert.ToDouble(reader.ReadLine());
+        pptemp.Fecha = Convert.ToDateTime(reader.ReadLine());
+        productos.Add(pptemp);
+        }
+        reader.Close();
+        dataGridView2.DataSource = null;
+        dataGridView2.Refresh();
+        dataGridView2.DataSource = productos;
+        dataGridView2.Refresh();
+        }
         }
     }
 }
