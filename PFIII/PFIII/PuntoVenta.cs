@@ -16,10 +16,12 @@ namespace PFIII
     List<Clientes> clientes = new List<Clientes>();
     List<Productos> productos = new List<Productos>();
     List<Venta1> venta1 = new List<Venta1>();
+    List<Usuarios> usuarios = new List<Usuarios>();
     int cont = 0;
     int contclientes = 0;
     string pro;
     string cli;
+    string usus;
         public PuntoVenta()
         {
             InitializeComponent();
@@ -63,6 +65,8 @@ namespace PFIII
 
         private void PuntoVenta_Load(object sender, EventArgs e)
         {
+        usus = Form1.usu;
+        labelCajero.Text = usus;
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
         string fileName = "Clientes.txt";
         FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
@@ -97,6 +101,7 @@ namespace PFIII
         comboBoxProductos.Items.Add(productos[i].Producto);
         }
         readers.Close();
+        
         }
 
         private void labelNombre_Click(object sender, EventArgs e)
@@ -133,6 +138,7 @@ namespace PFIII
         string fileName = "Venta.txt";
         FileStream stream = new FileStream(fileName, FileMode.Append, FileAccess.Write);
         StreamWriter writer = new StreamWriter(stream);
+        double descontar = 0;
         for (int i = 0; i < productos.Count; i++)
         {
         pro = comboBoxProductos.Text;
@@ -142,14 +148,23 @@ namespace PFIII
         writer.WriteLine(textBoxCantidad.Text);
         writer.WriteLine(productos[i].Precio);
         productos.Add(vtemp);
+        double g =Convert.ToDouble( textBoxCantidad.Text);
         cont++;
+        descontar = productos[i].Unidades-g ;
         }
         }
+        if(descontar<=0)
+        {
+        MessageBox.Show("Unidades de producto inuficiente.");
+        }
+        else
+        { 
         writer.Close();
         MessageBox.Show("Venta Realizada.");
         comboBoxProductos.Text = "";
         textBoxCantidad.Text = "";
         }
+        } 
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -246,6 +261,7 @@ namespace PFIII
         if(cli==clientes[j].Nit&& contclientes==1)
         {
         writer.WriteLine("Cliente: "+clientes[j].Nombre);
+        writer.WriteLine("Cajero: " + usus);
         }
         }
         writer.Close();

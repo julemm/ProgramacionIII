@@ -14,6 +14,7 @@ namespace PFIII
     {
         static List<Productos> productos = new List<Productos>();
         static int posicionmodificar;
+        string admin;
         public Trastienda()
         {
             InitializeComponent();
@@ -83,6 +84,8 @@ namespace PFIII
 
         private void Trastienda_Load(object sender, EventArgs e)
         {
+        admin = Form1.usu;
+        labelAdministrador.Text = admin;
         pictureBox1.Image = Image.FromFile("Mario.jpg");
         }
 

@@ -58,6 +58,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button7 = new System.Windows.Forms.Button();
             this.comboBoxProductos = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelCajero = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -384,12 +386,36 @@
             this.comboBoxProductos.Size = new System.Drawing.Size(86, 21);
             this.comboBoxProductos.TabIndex = 64;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label11.Location = new System.Drawing.Point(399, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 13);
+            this.label11.TabIndex = 65;
+            this.label11.Text = "Cajero:";
+            // 
+            // labelCajero
+            // 
+            this.labelCajero.AutoSize = true;
+            this.labelCajero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCajero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelCajero.Location = new System.Drawing.Point(445, 23);
+            this.labelCajero.Name = "labelCajero";
+            this.labelCajero.Size = new System.Drawing.Size(11, 13);
+            this.labelCajero.TabIndex = 66;
+            this.labelCajero.Text = ".";
+            // 
             // PuntoVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(557, 395);
+            this.Controls.Add(this.labelCajero);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBoxProductos);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox2);
@@ -462,5 +488,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ComboBox comboBoxProductos;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelCajero;
     }
 }

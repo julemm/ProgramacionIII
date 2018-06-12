@@ -1,8 +1,0 @@
-Producto: Wii
-Unidades: 100
-Fecha: 4/06/2018 00:00:00
-Cliente: Julio Cayax
-Producto: Metroid
-Unidades: 6
-Fecha: 8/08/2018 00:00:00
-Cliente: Kaylie Styles
